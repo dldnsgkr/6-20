@@ -58,6 +58,63 @@ body {
   color: #8b6914;
 }
 
+/* Navigation Phone Link */
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #8b6914 0%, #a67c00 100%);
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 105, 20, 0.3);
+}
+
+.nav-phone:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 105, 20, 0.4);
+  background: linear-gradient(135deg, #a67c00 0%, #c49200 100%);
+}
+
+.nav-phone:active {
+  transform: translateY(0);
+}
+
+.phone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: phone-ring 2s ease-in-out infinite;
+}
+
+.phone-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes phone-ring {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(-10deg);
+  }
+  20%, 40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.phone-number {
+  letter-spacing: 0.5px;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -425,6 +482,16 @@ body {
   .nav-links {
     gap: 1rem;
   }
+
+  .nav-phone {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .phone-icon svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -436,6 +503,18 @@ body {
 
   .nav-links {
     gap: 1.5rem;
+    order: 2;
+  }
+
+  .nav-phone {
+    order: 3;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .phone-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .hero-title {
@@ -467,5 +546,22 @@ body {
 
   .floating-emoji {
     font-size: 2rem;
+  }
+}
+
+/* Extra small screens - show only icon */
+@media (max-width: 420px) {
+  .nav-phone .phone-number {
+    display: none;
+  }
+
+  .nav-phone {
+    padding: 0.7rem;
+    border-radius: 50%;
+  }
+
+  .phone-icon svg {
+    width: 20px;
+    height: 20px;
   }
 }
